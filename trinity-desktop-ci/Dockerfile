@@ -8,7 +8,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git python \
     gcc-multilib g++-multilib \
     build-essential libssl-dev rpm \
-    libsecret-1-dev software-properties-common apt-transport-https
+    libsecret-1-dev software-properties-common apt-transport-https \
+    libudev-dev
 
 
 # install wine (needed for windows build)
