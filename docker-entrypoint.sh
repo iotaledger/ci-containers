@@ -17,5 +17,6 @@ $SSH_CLIENT_SIGNER_ADDR/sign/signer \
 
 echo "@cert-authority *.iota.cafe $(curl $SSH_HOST_SIGNER_ADDR/public_key)" >> $HOME/.ssh/known_hosts
 echo "@cert-authority *.iota.org $(curl $SSH_HOST_SIGNER_ADDR/public_key)" >> $HOME/.ssh/known_hosts
+echo "@cert-authority *.sadj.co $(curl $SSH_HOST_SIGNER_ADDR/public_key)" >> $HOME/.ssh/known_hosts
 
 exec "$@"
