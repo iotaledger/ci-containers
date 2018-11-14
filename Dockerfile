@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV ANSIBLE_VERSION=2.6.3
+ENV ANSIBLE_VERSION=2.7.1
 
 RUN apk update && \
     apk add --no-cache curl && \
