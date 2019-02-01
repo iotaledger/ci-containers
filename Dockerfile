@@ -1,4 +1,4 @@
-FROM node:8.12-stretch
+FROM node:8.15-stretch
 
 VOLUME /dist
 
@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y git python \
 
 # install wine (needed for windows build)
 RUN dpkg --add-architecture i386 && \
-    wget -nc https://dl.winehq.org/wine-builds/Release.key && \
-    apt-key add Release.key && \
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key && \
+    apt-key add winehq.key && \
     apt-add-repository https://dl.winehq.org/wine-builds/debian/ && \
     apt-get update && \
     apt-get install --install-recommends -y winehq-stable
