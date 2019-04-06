@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y git python \
     rm -rf /var/lib/apt/lists/*
 
 
-# install wine (needed for windows build)
+# Install wine (needed for Windows build)
 RUN dpkg --add-architecture i386 && \
     wget -nc https://dl.winehq.org/wine-builds/winehq.key && \
     apt-key add winehq.key && \
@@ -21,3 +21,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get install --install-recommends -y winehq-stable && \
     rm -rf /var/lib/apt/lists/*
+
+# Install appimagetool (needed for Linux build)
+RUN wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage && \
+    chmod a+x appimagetool-x86_64.AppImage
