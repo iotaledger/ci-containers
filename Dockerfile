@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y git python \
     gcc-multilib g++-multilib \
     build-essential libssl-dev rpm \
     libsecret-1-dev software-properties-common apt-transport-https \
-    libudev-dev libusb-1.0-0-dev
+    libudev-dev libusb-1.0-0-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 
 # install wine (needed for windows build)
@@ -18,4 +19,5 @@ RUN dpkg --add-architecture i386 && \
     apt-key add winehq.key && \
     apt-add-repository https://dl.winehq.org/wine-builds/debian/ && \
     apt-get update && \
-    apt-get install --install-recommends -y winehq-stable
+    apt-get install --install-recommends -y winehq-stable && \
+    rm -rf /var/lib/apt/lists/*
