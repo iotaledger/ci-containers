@@ -6,7 +6,7 @@ RUN dpkg --add-architecture i386 \
     automake \
     build-essential \
     wget \
-    cmake \ 
+    cmake \
     unzip \
     zip \
     curl \
@@ -30,6 +30,7 @@ RUN dpkg --add-architecture i386 \
     gcc-multilib \
     g++-multilib \
     clang-format \
+    cppcheck \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -84,7 +85,7 @@ RUN yes | sdkmanager \
     "extras;google;google_play_services" \
     "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
     "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" \
-    "add-ons;addon-google_apis-google-24" 
+    "add-ons;addon-google_apis-google-24"
 
 # ------------------------------------------------------
 # --- Install Gradle from PPA
@@ -131,4 +132,3 @@ RUN wget -q https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSIO
       && chmod a+x ./bazel_installer.sh && ./bazel_installer.sh --prefix=/usr \
       && rm bazel_installer.sh
 COPY .bazelrc /etc/bazel.bazelrc
-
