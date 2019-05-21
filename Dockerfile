@@ -132,6 +132,5 @@ RUN wget -q https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSIO
       && chmod a+x ./bazel_installer.sh && ./bazel_installer.sh --prefix=/usr \
       && rm bazel_installer.sh
 COPY .bazelrc /etc/bazel.bazelrc
-RUN wget -q https://github.com/bazelbuild/buildtools/releases/download/0.25.1/buildifier \
-    && chmod +x buildifier \
-    && mv buildifier /usr/local/bin/buildifier
+RUN wget -q https://github.com/bazelbuild/buildtools/releases/download/0.25.1/buildifier -O /usr/local/bin/buildifier \
+    && chmod +x /usr/local/bin/buildifier
