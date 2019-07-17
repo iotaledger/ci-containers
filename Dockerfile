@@ -1,5 +1,7 @@
-FROM ubuntu:19.10
+FROM ubuntu:18.10
 
+
+RUN echo "deb http://archive.ubuntu.com/ubuntu/ eoan main restricted" >> /etc/apt/sources.list
 RUN dpkg --add-architecture i386 \
  && apt-get update \
  && apt-get install  -y \
