@@ -1,6 +1,5 @@
 FROM ubuntu:19.10
 
-
 RUN dpkg --add-architecture i386 \
  && apt-get update \
  && apt-get install  -y \
@@ -32,6 +31,8 @@ RUN dpkg --add-architecture i386 \
     g++-multilib \
     clang-format \
     cppcheck \
+    mysql-client \
+    mysql-server \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
