@@ -31,8 +31,8 @@ RUN dpkg --add-architecture i386 \
     g++-multilib \
     clang-format \
     cppcheck \
-    mysql-client \
-    mysql-server \
+    mariadb-client \
+    mariadb-server \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
