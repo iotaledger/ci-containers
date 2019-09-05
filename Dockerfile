@@ -129,10 +129,10 @@ ENV PATH ${PATH}:${ANDROID_NDK_HOME}
 # -------------------- BAZEL ---------------------------
 # ------------------------------------------------------
 # ------------------------------------------------------
-ENV BAZEL_VERSION 0.25.2
+ENV BAZEL_VERSION 0.29.0
 RUN wget -q https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh -O bazel_installer.sh \
       && chmod a+x ./bazel_installer.sh && ./bazel_installer.sh --prefix=/usr \
       && rm bazel_installer.sh
 COPY .bazelrc /etc/bazel.bazelrc
-RUN wget -q https://github.com/bazelbuild/buildtools/releases/download/0.25.1/buildifier -O /usr/local/bin/buildifier \
+RUN wget -q https://github.com/bazelbuild/buildtools/releases/download/0.28.0/buildifier -O /usr/local/bin/buildifier \
     && chmod +x /usr/local/bin/buildifier
