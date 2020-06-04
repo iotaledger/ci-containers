@@ -1,4 +1,4 @@
-FROM node:10.18-stretch
+FROM node:10.21-stretch
 
 # Build and install OpenSSL 1.0.2k
 # Based on https://github.com/realm/realm-js/blob/master/Dockerfile
