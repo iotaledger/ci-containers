@@ -1,4 +1,4 @@
-FROM node:10.18-stretch
+FROM node:10.21-stretch
 
 VOLUME /dist
 
